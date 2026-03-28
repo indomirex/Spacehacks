@@ -41,7 +41,7 @@ export const SnowCoverChart = ({ data }) => {
     <div className="glass-panel chart-wrapper" style={{ flex: 1, padding: '24px', display: 'flex', flexDirection: 'column', marginBottom: '24px' }}>
       <div style={{ marginBottom: '16px' }}>
         <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '4px' }}>Snow Cover Area (%)</h3>
-        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', margin: 0 }}>Source: MODIS MOD10CM · European Alps · Jan–Apr composite</p>
+        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', margin: 0 }}>Source: ERA5-Land · European Alps · Nov–Feb composite</p>
       </div>
       <div style={{ flex: 1, minHeight: '300px' }}>
         <ResponsiveContainer width="100%" height="100%">
@@ -74,7 +74,7 @@ export const TemperatureChart = ({ data }) => {
     <div className="glass-panel chart-wrapper" style={{ flex: 1, padding: '24px', display: 'flex', flexDirection: 'column', marginBottom: '24px' }}>
       <div style={{ marginBottom: '16px' }}>
         <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '4px' }}>Avg Winter Temperature (°C)</h3>
-        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', margin: 0 }}>Source: ERA5-Land · ECMWF · 1984–2024</p>
+        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', margin: 0 }}>Source: ERA5-Land · European Alps · Nov–Feb composite</p>
       </div>
       <div style={{ flex: 1, minHeight: '300px' }}>
         <ResponsiveContainer width="100%" height="100%">
