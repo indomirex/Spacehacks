@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+earthengine-api
+python-dotenv
+httpx
+torch
+pandas
+scikit-learn
+pillow

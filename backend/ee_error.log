@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import ee; ee.Initialize()
+               ~~~~~~~~~~~~~^^
+  File "C:\Users\sahir\OneDrive\Documents\SpaceHacks\alp-dashboard\backend\venv\Lib\site-packages\ee\_utils.py", line 39, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\sahir\OneDrive\Documents\SpaceHacks\alp-dashboard\backend\venv\Lib\site-packages\ee\__init__.py", line 274, in Initialize
+    raise EEException(NO_PROJECT_EXCEPTION) from None
+ee.ee_exception.EEException: ee.Initialize: no project found. Call with project= or see http://goo.gle/ee-auth.
