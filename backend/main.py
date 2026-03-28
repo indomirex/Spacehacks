@@ -1,8 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
-from ml_model import get_live_earth_engine_data, predict_future_climate, generate_adaptation_rationale
-from vision_attention import analyze_satellite_image
+from ml_model import get_live_earth_engine_data, generate_adaptation_rationale
+from vision_attention import analyze_satellite_image, analyze_permafrost_imagery
+from misinfo_analyzer import analyzer
 
 app = FastAPI(title="Alpine Climate Dashboard API")
 
@@ -32,20 +33,40 @@ def get_spatial_analysis():
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
+@app.get("/api/permafrost-analysis")
+def get_permafrost_analysis():
+    """Runs NDVI-proxy attention analysis for permafrost degradation mapping"""
+    try:
+        data = analyze_permafrost_imagery()
+        return {"status": "success", "data": data}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
 @app.get("/api/climate-data")
 def get_climate_data():
-    """Returns historical Landsat data and 10-year Transformer predictions"""
+    """Returns live ERA5/MODIS satellite data for the European Alps (1984-present)"""
     historical = get_live_earth_engine_data()
-    future = predict_future_climate(historical, years_to_predict=10)
-    
-    dynamic_rationale = generate_adaptation_rationale(historical + future["predictions"])
-    
-    # Combine data for full time-series chart
-    full_series = historical + future["predictions"]
-    
+    rationale = generate_adaptation_rationale(historical)
     return {
         "historical_count": len(historical),
-        "prediction_count": len(future["predictions"]),
-        "full_series": full_series,
-        "rationale": dynamic_rationale
+        "full_series": historical,
+        "rationale": rationale
     }
+
+@app.get("/api/misinfo-stats")
+def get_misinfo_stats():
+    """Returns aggregated stats from the climate-fever dataset"""
+    try:
+        return {"status": "success", "data": analyzer.get_summary_stats()}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+@app.get("/api/search-misinfo")
+def search_misinfo(query: str):
+    """Finds top-K similar claims in the dataset via KNN"""
+    try:
+        results = analyzer.find_similar_claims(query)
+        return {"status": "success", "results": results}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+

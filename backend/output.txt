@@ -1,0 +1,6 @@
+Fetching live data from Earth Engine (ERA5 + MODIS proxy)...
+Year: 1984, Temp: -0.09, Snow: 449.6
+Year: 1994, Temp: 2.44, Snow: 343.3
+Year: 2004, Temp: 1.11, Snow: 398.8
+Year: 2014, Temp: 3.74, Snow: 288.5
+Year: 2024, Temp: 4.27, Snow: 266.3

@@ -1,0 +1,57 @@
+[
+  {
+    "year": "1984",
+    "snow_cover": 449.6,
+    "temp": -0.09,
+    "adaptation_spending": 110,
+    "water_usage": 254.9,
+    "glacial_lake_area": 117.4,
+    "stability": 61.6,
+    "ndvi": 0.367,
+    "is_prediction": false
+  },
+  {
+    "year": "1994",
+    "snow_cover": 343.3,
+    "temp": 2.44,
+    "adaptation_spending": 210,
+    "water_usage": 285.2,
+    "glacial_lake_area": 162.5,
+    "stability": 32.5,
+    "ndvi": 0.304,
+    "is_prediction": false
+  },
+  {
+    "year": "2004",
+    "snow_cover": 398.8,
+    "temp": 1.11,
+    "adaptation_spending": 285.1,
+    "water_usage": 269.4,
+    "glacial_lake_area": 192.3,
+    "stability": 47.7,
+    "ndvi": 0.337,
+    "is_prediction": false
+  },
+  {
+    "year": "2014",
+    "snow_cover": 288.5,
+    "temp": 3.74,
+    "adaptation_spending": 553.3,
+    "water_usage": 300.9,
+    "glacial_lake_area": 237.8,
+    "stability": 17.5,
+    "ndvi": 0.271,
+    "is_prediction": false
+  },
+  {
+    "year": "2024",
+    "snow_cover": 266.3,
+    "temp": 4.27,
+    "adaptation_spending": 727.1,
+    "water_usage": 307.2,
+    "glacial_lake_area": 274.9,
+    "stability": 11.4,
+    "ndvi": 0.258,
+    "is_prediction": false
+  }
+]

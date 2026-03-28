@@ -92,7 +92,7 @@ const DataAnalysisTab = () => {
                   </h3>
                 </div>
                 <img 
-                  src={item.image_b64} 
+                  src={`data:image/jpeg;base64,${item.image_b64}`} 
                   alt={`${item.year} satellite`} 
                   style={{ width: '100%', height: 'auto', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)' }} 
                 />
